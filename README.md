@@ -2,7 +2,7 @@
 
 ## Índice
 
-* [1. Consideraciones generales](#1-consideraciones-generales)
+* [1. Introducción](#1-Introducción)
 * [2. Preámbulo](#2-preámbulo)
 * [3. Funcionalidades](#3-funcionalidades)
 * [4. Boilerplate](#4-boilerplate)
@@ -15,7 +15,7 @@
 
 ***
 
-## 1. Consideraciones generales
+## 1. Introducción
 
 * Este proyecto lo resolvemos de manera **individual**.
 * El rango de tiempo estimado para completar el proyecto es de 1 a 3 Sprints.
