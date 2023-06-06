@@ -33,7 +33,7 @@ const analyzer = {
     addEventListener('keyup', (e)=>{
 
       const $inputUsuario = e.target.value,
-        $countCharactersNoBlank=$inputUsuario.trim().replace(/[\s\[¿!¡;,:\.\?#@()"]/gi,'').length;
+        $countCharactersNoBlank=$inputUsuario.trim().replace(/[\s[¿!¡;,:.?#@()"]/gi,'').length;
       
       d.querySelector(totalCharactersNoBlank).innerHTML=`<p>${$countCharactersNoBlank}</p>`;
     })
