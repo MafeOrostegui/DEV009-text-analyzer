@@ -6,11 +6,27 @@
   <title>Text tester</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<header>
-  <img src="images/Logo.png">
-</header>
-
 <body>
+  <header>
+    <img src="images/Logo.png">
+    <h1>Analizador de texto</h1>
+  </header>
+  <nav></nav>
+  <main>
+    <ul>
+      <li>Palabras: <span class="total-words"></span></li>
+      <li>Caracteres: <span class="total-characters"></span></li>
+      <li>caracteres sin espacios: <span class="total-characters-noblank"></span></li>
+      <li>Números: <span class="total-numbers"></span></li>
+      <li>Suma números: <span class="addition-numbers"></span></li>
+      <li>Promedio longitud: <span class="prom-longitud"></span></li>
+    </ul>
+    <textarea name="user-input"></textarea>
+    <button id="reset-button">Limpiar métricas</button>
+  </main>
+  <footer>
+    <p>Maria Fernanda Orostegui</p>
+  </footer>
   <script src="index.js" type="module"></script>
 </body>
 </html>

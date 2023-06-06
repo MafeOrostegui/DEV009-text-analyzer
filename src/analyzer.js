@@ -1,22 +1,102 @@
-const analyzer = {  
-  getWordCount: (text) => {
-    //TODO: esta función debe retornar el recuento de palabras que se encuentran en el parámetro `text` de tipo `string`.
+const d= document;
+
+
+const analyzer = { 
+
+
+  getWordCount: (text, totalWords) => {
+
+    addEventListener('keyup', (e)=>{
+
+      const $texArea=e.target.value,
+        $countWords=$texArea.trim().replace(/\sz+/gi, ' ').split(' ').length;
+
+      d.querySelector(totalWords).innerHTML=`<p>${$countWords}</p>`
+    })
+
   },
-  getCharacterCount: (text) => {
-    //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.
+
+  getCharacterCount: (text, totalCharacters) => {
+
+    addEventListener('keyup',(e)=>{
+
+      const $characteres=e.target.value,
+        $countCharacteres=$characteres.length;
+
+      d.querySelector(totalCharacters).innerHTML=`<p>${$countCharacteres}</p>`;
+    })
+
   },
-  getCharacterCountExcludingSpaces: (text) => {
-    //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
+
+  getCharacterCountExcludingSpaces: (text, totalCharactersNoBlank ) => {
+
+    addEventListener('keyup', (e)=>{
+
+      const $inputUsuario = e.target.value,
+        $countCharactersNoBlank=$inputUsuario.trim().replace(/[\s\[¿!¡;,:\.\?#@()"]/gi,'').length;
+      
+      d.querySelector(totalCharactersNoBlank).innerHTML=`<p>${$countCharactersNoBlank}</p>`;
+    })
+
   },
-  getAverageWordLength: (text) => {    
-    //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
+
+  getAverageWordLength: (text, totalNumbers) => {  
+
+    addEventListener('keyup', (e)=>{
+
+      const $numbers= e.target.value,
+        $countNumbers=$numbers.trim().match(/[0-9]+/gi).length;
+
+      d.querySelector(totalNumbers).innerHTML=`<p>${$countNumbers}</p>`
+    })
+    
+
   },
-  getNumberCount: (text) => {
-    //TODO: esta función debe retornar cúantos números se encuentran en el parámetro `text` de tipo `string`.
+  getNumberCount: (text, additionNumbers) => {
+
+    addEventListener('keyup', (e)=>{
+
+      const $string=e.target.value,
+        $array=$string.trim().replace(/\sz+/gi, ' ').split(' ');
+
+      let $additionTotal=0;
+
+
+      for(let num of $array){
+
+        if(/[0-9]+/gi.test(num)){
+
+          num=parseInt(num)
+              
+          $additionTotal+=num;
+
+        }
+
+        d.querySelector(additionNumbers).innerHTML=`<p>${$additionTotal}</p>`
+
+      }          
+    })   
   },
-  getNumberSum: (text) => {
-    //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
-  },
+
+  getNumberSum: (text, longitud) => {
+
+    addEventListener('keyup', (e)=>{
+
+      const $cadena=e.target.value,
+        $arrayOfCadena=$cadena.trim().replace(/\sz+/gi, '').split(' '),
+        $longitudElementArray=$arrayOfCadena.map(x => x.length);
+      
+      const $sum=$longitudElementArray.reduce((a, b)=> a += b),
+        $longitudProm= $sum/$longitudElementArray.length;
+          
+       
+      d.querySelector(longitud).innerHTML=`<p>${$longitudProm.toFixed(2)}</p>`
+
+    })
+  }
+
+
 };
 
 export default analyzer;
+
