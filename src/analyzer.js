@@ -21,9 +21,6 @@ const analyzer = {
       $countCharacteres=$characters.length;
 
     document.querySelector(totalCharacters).innerHTML=`<p>${$countCharacteres}</p>`; 
-
-    return $countCharacteres;   
-
   },
 
 
@@ -33,9 +30,6 @@ const analyzer = {
       $countCharactersNoBlank=$charactersNoBlank.trim().replace(/[\s[¿!¡;,:.?#@()"]/gi,'').length;
       
     document.querySelector(totalCharactersNoBlank).innerHTML=`<p>${$countCharactersNoBlank}</p>`; 
-
-    return $countCharactersNoBlank;   
-
   },
 
 
@@ -50,8 +44,6 @@ const analyzer = {
       
    
     document.querySelector(longitud).innerHTML=`<p>${$longitudProm.toFixed(2)}</p>`; 
-
-    return $longitudProm;   
   },
 
 
@@ -71,9 +63,7 @@ const analyzer = {
         $totalNumbers+=1;
       }
     }
-    document.querySelector(totalNumbers).innerHTML=`<p>${$totalNumbers}</p>`;
-
-    return $totalNumbers;   
+    document.querySelector(totalNumbers).innerHTML=`<p>${$totalNumbers}</p>`; 
   },
 
 
@@ -96,7 +86,6 @@ const analyzer = {
       }
       document.querySelector(additionNumbers).innerHTML=`<p>${$additionTotal}</p>`;
     }
-    return $additionNumbers;   
   },
 
 };
