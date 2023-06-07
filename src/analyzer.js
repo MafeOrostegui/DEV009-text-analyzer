@@ -1,82 +1,93 @@
-const d = document;
-
-
-
 const analyzer = { 
-  
 
-  getWordCount: (e, totalWords) => {
+  getWordCount: (totalWords) => {
 
-    const $words=e.target.value;
+    const $words=document.querySelector('textarea').value,
+      $arrayWords=$words.trim().replace(/\sz+/gi, ' ').split(' ');
 
-    const $countWords=$words.trim().replace(/\sz+/gi, ' ').split(' ').length;
-    d.querySelector(totalWords).innerHTML=`<p>${$countWords}</p>`
+    let $countWords=0;
+
+    for(let i=0; i<$arrayWords.length; i++){
+      $countWords+=1;
+    }
+    document.querySelector(totalWords).innerHTML=`<p>${$countWords}</p>`
       
   },
 
-  getCharacterCount: (e, totalCharacters) => {
+  getCharacterCount: (totalCharacters) => {
 
-    const $characteres=e.target.value,
-      $countCharacteres=$characteres.length;
+    const $characters=document.querySelector('textarea').value,
+      $countCharacteres=$characters.length;
 
-    d.querySelector(totalCharacters).innerHTML=`<p>${$countCharacteres}</p>`;
+    document.querySelector(totalCharacters).innerHTML=`<p>${$countCharacteres}</p>`; 
 
   },
 
-  getCharacterCountExcludingSpaces: (e, totalCharactersNoBlank ) =>{
-
-    const $inputUsuario = e.target.value,
-      $countCharactersNoBlank=$inputUsuario.trim().replace(/[\s[¿!¡;,:.?#@()"]/gi,'').length;
+  getCharacterCountExcludingSpaces: (totalCharactersNoBlank ) =>{
+ 
+    const $charactersNoBlank=document.querySelector('textarea').value,
+      $countCharactersNoBlank=$charactersNoBlank.trim().replace(/[\s[¿!¡;,:.?#@()"]/gi,'').length;
       
-    d.querySelector(totalCharactersNoBlank).innerHTML=`<p>${$countCharactersNoBlank}</p>`;
+    document.querySelector(totalCharactersNoBlank).innerHTML=`<p>${$countCharactersNoBlank}</p>`; 
 
   },
 
 
-  getAverageWordLength: (e, longitud) => {
+  getAverageWordLength: (longitud) => {
 
-    const $cadena=e.target.value,
-      $arrayOfCadena=$cadena.trim().replace(/\sz+/gi,'').split(' '),
+    const $wordsLength=document.querySelector('textarea').value,
+      $arrayOfCadena=$wordsLength.trim().replace(/\sz+/gi,'').split(' '),
       $longitudElementArray=$arrayOfCadena.map(x => x.length);
 
     const $sum=$longitudElementArray.reduce((a, b)=> a += b),
       $longitudProm = $sum/$longitudElementArray.length;
       
    
-    d.querySelector(longitud).innerHTML=`<p>${$longitudProm.toFixed(2)}</p>`;
+    document.querySelector(longitud).innerHTML=`<p>${$longitudProm.toFixed(2)}</p>`; 
 
 
   },
 
-  getNumberCount: (e, totalNumbers) => {
+  getNumberCount: (totalNumbers) => {
 
-    const $numbers= e.target.value,
-      $countNumbers=$numbers.trim().match(/[0-9]+/gi).length;
+    const $numbers=document.querySelector('textarea').value,
+      $arrayNumbers=$numbers.trim().split(' ');
 
-    d.querySelector(totalNumbers).innerHTML=`<p>${$countNumbers}</p>`;
+    let $totalNumbers=0;
+
+    for (let x of $arrayNumbers){
+
+      if(x.match(/[0-9]+/gi) && !x.match(/[a-z]/ig)){
+
+        x=parseInt(x)
+
+        $totalNumbers+=1;
+      }
+    }
+    document.querySelector(totalNumbers).innerHTML=`<p>${$totalNumbers}</p>`;
 
   },
 
-  getNumberSum: (e, additionNumbers) => {
+  getNumberSum: (additionNumbers) => {
 
-    const $string=e.target.value,
-      $array=$string.trim().replace(/\sz+/gi, ' ').split(' ');
+    const $additionNumbers=document.querySelector('textarea').value,
+      $array=$additionNumbers.trim().replace(/\sz+/gi, ' ').split(' ');
 
     let $additionTotal=0;
 
 
     for(let num of $array){
 
-      if(/[0-9]+/gi.test(num)){
+      if(num.match(/[0-9]+/gi) && !num.match(/[a-z]/ig)){
 
-        num=parseInt(num)
+        num=parseFloat(num)
             
         $additionTotal+=num;
 
       }
 
-      d.querySelector(additionNumbers).innerHTML=`<p>${$additionTotal}</p>`;
-    }
+      document.querySelector(additionNumbers).innerHTML=`<p>${$additionTotal}</p>`;
+    } 
   },
 
 };
@@ -85,4 +96,3 @@ const analyzer = {
 
 export default analyzer;
 
-3
