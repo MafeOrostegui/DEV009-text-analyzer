@@ -9,10 +9,11 @@ const analyzer = {
 
     for(let i=0; i<$arrayWords.length; i++){
       $countWords+=1;
+      document.querySelector(totalWords).innerHTML=`<p>${$countWords}</p>`
     }
-    document.querySelector(totalWords).innerHTML=`<p>${$countWords}</p>`
-      
+    return $countWords;   
   },
+  
 
   getCharacterCount: (totalCharacters) => {
 
@@ -21,7 +22,10 @@ const analyzer = {
 
     document.querySelector(totalCharacters).innerHTML=`<p>${$countCharacteres}</p>`; 
 
+    return $countCharacteres;   
+
   },
+
 
   getCharacterCountExcludingSpaces: (totalCharactersNoBlank ) =>{
  
@@ -29,6 +33,8 @@ const analyzer = {
       $countCharactersNoBlank=$charactersNoBlank.trim().replace(/[\s[¿!¡;,:.?#@()"]/gi,'').length;
       
     document.querySelector(totalCharactersNoBlank).innerHTML=`<p>${$countCharactersNoBlank}</p>`; 
+
+    return $countCharactersNoBlank;   
 
   },
 
@@ -45,8 +51,9 @@ const analyzer = {
    
     document.querySelector(longitud).innerHTML=`<p>${$longitudProm.toFixed(2)}</p>`; 
 
-
+    return $longitudProm;   
   },
+
 
   getNumberCount: (totalNumbers) => {
 
@@ -66,7 +73,9 @@ const analyzer = {
     }
     document.querySelector(totalNumbers).innerHTML=`<p>${$totalNumbers}</p>`;
 
+    return $totalNumbers;   
   },
+
 
   getNumberSum: (additionNumbers) => {
 
@@ -85,9 +94,9 @@ const analyzer = {
         $additionTotal+=num;
 
       }
-
       document.querySelector(additionNumbers).innerHTML=`<p>${$additionTotal}</p>`;
-    } 
+    }
+    return $additionNumbers;   
   },
 
 };
