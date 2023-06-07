@@ -5,27 +5,40 @@
   <meta charset="utf-8">
   <title>Text tester</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <img src="images/Logo.png">
+    <img src="images/logo.png">
     <h1>Analizador de texto</h1>
+    <nav>
+      <p>Contact</p>
+    </nav>
   </header>
-  <nav></nav>
   <main>
-    <ul>
-      <li>Palabras: <span class="total-words"></span></li>
-      <li>Caracteres: <span class="total-characters"></span></li>
-      <li>caracteres sin espacios: <span class="total-characters-noblank"></span></li>
-      <li>Números: <span class="total-numbers"></span></li>
-      <li>Suma números: <span class="addition-numbers"></span></li>
-      <li>Promedio longitud: <span class="prom-longitud"></span></li>
-    </ul>
-    <textarea name="user-input"></textarea>
-    <button id="reset-button">Limpiar métricas</button>
+    <form id="funtions">
+      <div class="box-left">
+        <ul class="answers">
+          <li class="lista">Words <span class="total-words">0</span></li>
+          <li class="lista">Characteres <span class="total-characters">0</span></li>
+          <li class="lista">Characters without spaces <span class="total-characters-noblank">0</span></li>
+          <li class="lista">Numbers <span class="total-numbers">0</span></li>
+          <li class="lista">Addition numbers <span class="addition-numbers">0</span></li>
+          <li class="lista">Average length <span class="prom-longitud">0</span></li>
+        </ul>
+      </div>
+      <div class="box-right">
+        <textarea name="user-input"></textarea>
+        <button id="reset-button">Reset</button>
+      </div>
+    </form>
   </main>
   <footer>
-    <p>Maria Fernanda Orostegui</p>
+    <nav>
+      <p>Maria Fernanda Orostegui</p>
+    </nav>
   </footer>
   <script src="index.js" type="module"></script>
 </body>
