@@ -100,7 +100,7 @@ footer {
     background-color: white;    
 }
 
-textarea[name~="user-input"] {
+textarea[name="user-input"] {
 
     width: 50vh;
     height: 50vh;
