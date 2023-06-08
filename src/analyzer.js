@@ -5,9 +5,12 @@ const analyzer = {
     const $arrayWords=text.trim().replace(/\sz+/gi, ' ').split(' ');
 
     let $countWords=0;
+  
 
     for(let i=0; i<$arrayWords.length; i++){
+
       $countWords+=1;
+
     }
 
     return $countWords;

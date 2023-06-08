@@ -67,6 +67,9 @@ footer {
     width: 50vw;
     height: 80vh;
     max-height:100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 
 #funtions .box-right {
@@ -81,11 +84,12 @@ footer {
     text-align: center;
     background-color:rgba(255, 255, 255, 0.5);
     display: grid;
+    grid-row: 2/3;
+    grid-column: 2/3;
     grid-template-columns: repeat(3,auto);
     grid-template-rows: repeat(3, auto);
     width: 30vw;
     height: auto;
-    margin:200px 100px;
     border-radius: 20px;
 }
 
