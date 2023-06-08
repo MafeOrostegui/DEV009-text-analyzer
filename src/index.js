@@ -1,18 +1,19 @@
 import analyzer from "./analyzer.js";
 
+const $textArea=document.querySelector('textarea');
+
 
 document.addEventListener('keyup', ()=>{
-  analyzer.getWordCount('.total-words');
-  analyzer.getCharacterCount('.total-characters');
-  analyzer.getCharacterCountExcludingSpaces('.total-characters-noblank');
-  analyzer.getAverageWordLength('.prom-longitud');
-  analyzer.getNumberCount('.total-numbers');
-  analyzer.getNumberSum('.addition-numbers');  
+  analyzer.getWordCount($textArea.value);
+  analyzer.getCharacterCount($textArea.value);
+  analyzer.getCharacterCountExcludingSpaces($textArea.value);
+  analyzer.getAverageWordLength($textArea.value);
+  analyzer.getNumberCount($textArea.value);
+  analyzer.getNumberSum($textArea.value);
 });
 
 
-const $btn=document.getElementById("reset-button"),
-  $textArea=document.querySelector('textarea');
+const $btn=document.getElementById("reset-button");
 $btn.addEventListener("click", cleanTextArea);
 
 
@@ -26,4 +27,3 @@ function cleanTextArea(){
   document.getElementsByClassName("total-numbers").innerHTML=0;
   document.getElementsByClassName("addition-numbers").innerHTML=0;
 }
-

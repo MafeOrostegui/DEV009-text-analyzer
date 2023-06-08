@@ -1,56 +1,54 @@
 const analyzer = { 
 
-  getWordCount: (totalWords) => {
+  getWordCount: (text) => {
 
-    const $words=document.querySelector('textarea').value,
-      $arrayWords=$words.trim().replace(/\sz+/gi, ' ').split(' ');
+    const $arrayWords=text.trim().replace(/\sz+/gi, ' ').split(' ');
 
     let $countWords=0;
 
     for(let i=0; i<$arrayWords.length; i++){
+
       $countWords+=1;
-      document.querySelector(totalWords).innerHTML=`<p>${$countWords}</p>`
     }
-    return $countWords;   
+
+    return $countWords;
+
   },
   
 
-  getCharacterCount: (totalCharacters) => {
+  getCharacterCount: (text) => {
 
-    const $characters=document.querySelector('textarea').value,
-      $countCharacteres=$characters.length;
+    const $countCharacteres=text.length;
 
-    document.querySelector(totalCharacters).innerHTML=`<p>${$countCharacteres}</p>`; 
+    return $countCharacteres;
+
   },
 
 
-  getCharacterCountExcludingSpaces: (totalCharactersNoBlank ) =>{
+  getCharacterCountExcludingSpaces: (text) =>{
  
-    const $charactersNoBlank=document.querySelector('textarea').value,
-      $countCharactersNoBlank=$charactersNoBlank.trim().replace(/[\s[¿!¡;,:.?#@()"]/gi,'').length;
-      
-    document.querySelector(totalCharactersNoBlank).innerHTML=`<p>${$countCharactersNoBlank}</p>`; 
+    const $countCharactersNoBlank=text.trim().replace(/[\s[¿!¡;,:.?#@()"]/gi,'').length;
+
+    return $countCharactersNoBlank;
   },
 
 
-  getAverageWordLength: (longitud) => {
+  getAverageWordLength: (text) => {
 
-    const $wordsLength=document.querySelector('textarea').value,
-      $arrayOfCadena=$wordsLength.trim().replace(/\sz+/gi,'').split(' '),
+    const $arrayOfCadena=text.trim().replace(/\sz+/gi,'').split(' '),
       $longitudElementArray=$arrayOfCadena.map(x => x.length);
 
     const $sum=$longitudElementArray.reduce((a, b)=> a += b),
-      $longitudProm = $sum/$longitudElementArray.length;
-      
-   
-    document.querySelector(longitud).innerHTML=`<p>${$longitudProm.toFixed(2)}</p>`; 
+      $longitudProm = Number(($sum/$longitudElementArray.length).toFixed(2));
+
+    return $longitudProm;
+
   },
 
 
-  getNumberCount: (totalNumbers) => {
+  getNumberCount: (text) => {
 
-    const $numbers=document.querySelector('textarea').value,
-      $arrayNumbers=$numbers.trim().split(' ');
+    const $arrayNumbers=text.trim().split(' ');
 
     let $totalNumbers=0;
 
@@ -63,14 +61,14 @@ const analyzer = {
         $totalNumbers+=1;
       }
     }
-    document.querySelector(totalNumbers).innerHTML=`<p>${$totalNumbers}</p>`; 
+    return $totalNumbers
+
   },
 
 
-  getNumberSum: (additionNumbers) => {
+  getNumberSum: (text) => {
 
-    const $additionNumbers=document.querySelector('textarea').value,
-      $array=$additionNumbers.trim().replace(/\sz+/gi, ' ').split(' ');
+    const $array=text.trim().replace(/\sz+/gi, ' ').split(' ');
 
     let $additionTotal=0;
 
@@ -84,10 +82,11 @@ const analyzer = {
         $additionTotal+=num;
 
       }
-      document.querySelector(additionNumbers).innerHTML=`<p>${$additionTotal}</p>`;
-    }
-  },
 
+    }
+    return $additionTotal;
+  },
+  
 };
 
 
