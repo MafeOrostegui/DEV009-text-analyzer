@@ -77,6 +77,10 @@ footer {
     width: 50vw;
     height: 80vh;
     max-height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 
 .answers {
@@ -87,7 +91,7 @@ footer {
     grid-row: 2/3;
     grid-column: 2/3;
     grid-template-columns: repeat(3,auto);
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
     width: 30vw;
     height: auto;
     border-radius: 20px;
@@ -108,10 +112,9 @@ textarea[name="user-input"] {
 
     width: 50vh;
     height: 50vh;
-    margin-left: 25vh;
-    margin-top: 10vh;
     border: none;
     border-radius: 20px;
+    align-self: center;
 }
 
 
@@ -121,14 +124,17 @@ textarea[name="user-input"] {
     border-style: none;
     border-radius: 30px;
     padding: 10px;
-    margin: 0 25vw;
     box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     background-color:#04D9B2;
     font-size: 18px;
     color: white;
+    width: 100px;
+    margin-top: 10px;
+    align-self: center;
 }
 
 footer p{
     color: white;
+    margin: 50px auto;
 }
 
