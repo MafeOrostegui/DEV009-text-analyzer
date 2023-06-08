@@ -22,13 +22,13 @@ La planificación comenzó con la realización de la funcionalidad del sistema y
 
 El prototipo de baja fidelidad se estructuraba de solo 3 áreas con un input centrado en el documento, sin embargo decidí optar por un diseño mucho más moderno y creativo que construí con la ayuda de la herramienta Figma.
 
-![Foto de prototipo de alta fidelidad](/docs/images/prototipo%20alta%20fidelidad.png)
+![Foto de prototipo de alta fidelidad](/docs/images/prototipoaltafidelidad.png)
 
 ![Paleta de colores](/docs/images/paletadecolores.png)
 
 Escogi la paleta de colores basandome en la industria de la educación, pues deseaba que se viera profesional pero al mismo tiempo divertida, en cuánto a la creación del logo y el background lo diseñé en Adobe Express. Finalmente en la ejecución de la estructura gráfica me acerqué en gran parte al prototipo planeado.
 
-![Captura de pantalla de la aplicación](/docs/images/captura%20de%20pantalla.png)
+![Captura de pantalla de la aplicación](/docs/images/capturadepantalla.png)
 
 
 
