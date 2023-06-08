@@ -1,22 +1,5 @@
 const analyzer = { 
-
-  getWordCount: (text) => {
-
-    const $arrayWords=text.trim().replace(/\sz+/gi, ' ').split(' ');
-
-    let $countWords=0;
   
-
-    for(let i=0; i<$arrayWords.length; i++){
-
-      $countWords+=1;
-
-    }
-
-    return $countWords;
-  },
-  
-
   getCharacterCount: (text) => {
 
     const $countCharacteres=text.length;
@@ -34,16 +17,20 @@ const analyzer = {
   },
 
 
-  getAverageWordLength: (text) => {
+  getWordCount: (text) => {
 
-    const $arrayOfCadena=text.trim().replace(/\sz+/gi,'').split(' '),
-      $longitudElementArray=$arrayOfCadena.map(x => x.length);
+    const $arrayWords=text.trim().replace(/\sz+/gi, ' ').split(' ');
 
-    const $sum=$longitudElementArray.reduce((a, b)=> a += b),
-      $longitudProm = Number(($sum/$longitudElementArray.length).toFixed(2));
+    let $countWords=0;
+  
 
-    return $longitudProm;
+    for(let i=0; i<$arrayWords.length; i++){
 
+      $countWords+=1;
+
+    }
+
+    return $countWords;
   },
 
 
@@ -85,6 +72,18 @@ const analyzer = {
 
     }
     return $additionTotal;
+  },
+
+  getAverageWordLength: (text) => {
+
+    const $arrayOfCadena=text.trim().replace(/\sz+/gi,'').split(' '),
+      $longitudElementArray=$arrayOfCadena.map(x => x.length);
+
+    const $sum=$longitudElementArray.reduce((a, b)=> a += b),
+      $longitudProm = Number(($sum/$longitudElementArray.length).toFixed(2));
+
+    return $longitudProm;
+
   },
   
 };
