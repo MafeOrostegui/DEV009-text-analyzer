@@ -7,12 +7,10 @@ const analyzer = {
     let $countWords=0;
 
     for(let i=0; i<$arrayWords.length; i++){
-
       $countWords+=1;
     }
 
     return $countWords;
-
   },
   
 
@@ -71,7 +69,6 @@ const analyzer = {
     const $array=text.trim().replace(/\sz+/gi, ' ').split(' ');
 
     let $additionTotal=0;
-
 
     for(let num of $array){
 
